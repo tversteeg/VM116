@@ -2,24 +2,11 @@
 #include <unistd.h>
 #include <time.h>
 #include <stdlib.h>
-#include <jack/jack.h>
 
 int dmxOpen();
 int dmxSend();
 int dmxClose();
 int dmx_channels[3];
-
-jack_port_t* input_port;
-jack_port_t* output_port;
-
-int process(jack_nframes_t nframes, void *arg){
-	jack_default_audio_sample_t *out = (jack_default_audio_sample_t *) jack_port_get_buffer (output_port, nframes);
-	jack_default_audio_sample_t *in = (jack_default_audio_sample_t *) jack_port_get_buffer (input_port, nframes);
-
-	memcpy (out, in, sizeof (jack_default_audio_sample_t) * nframes);
-	
-	return 0;
-}
 
 int main(){
 	dmx_channels[0] = 255;
