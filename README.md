@@ -14,3 +14,5 @@ int dmx_channels[512];
 
 3. Always use `dmxOpen` before using `dmxSend`, and always use `dmxClose` after.
 4. You can change the `dmx_channels` to values from 0-255.
+------------
+Based on: http://k8062forlinux.sourceforge.net/

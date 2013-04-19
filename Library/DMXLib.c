@@ -35,8 +35,6 @@ int dmxOpen(){
 		perror("Finding USB devices failed");
 		return 0;
 	}
-	
-	usb_set_debug(1);
 
 	busses = usb_get_busses();
 	for(bus = busses; bus; bus = bus->next){

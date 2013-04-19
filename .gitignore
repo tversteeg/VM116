@@ -1,0 +1,4 @@
+*.bak
+
+libportaudio.a
+portaudio.h

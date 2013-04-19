@@ -1,2 +1,2 @@
 DMXTest: main.c libdmx.a
-	gcc -static -Wall main.c -L. -ldmx -lusb -g -o main
+	gcc `pkg-config --cflags --libs gtk+-3.0` -Wall main.c -L. -ldmx -lusb -g -o main
