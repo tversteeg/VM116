@@ -1,0 +1,9 @@
+[package]
+
+name = "vm116"
+version = "0.0.1"
+authors = [ "Thomas Versteeg <thomasversteeg@gmx.com" ]
+target_path = "."
+
+[dependencies]
+gtk = "*"
