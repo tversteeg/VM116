@@ -1,9 +1,10 @@
 [package]
-
 name = "vm116"
 version = "0.0.1"
-authors = [ "Thomas Versteeg <thomasversteeg@gmx.com" ]
-target_path = "."
+license = "GPLv3"
+authors = ["Thomas Versteeg <thomasversteeg@gmx.com"]
+keywords = ["usb", "dmx", "velleman", "hardware"]
 
 [dependencies]
 gtk = "*"
+libusb = "*"
