@@ -15,7 +15,9 @@ impl Dmx {
         for device in self.context.devices().unwrap().iter() {
             let device_desc = device.device_descriptor().unwrap();
 
-            println!("Bus {:03} Device {:03} ID {:04x}:{:04x}", device.bus_number(), device.address(), device_desc.vendor_id(), device_desc.product_id());
+            if device_desc.vendor_id() == 0x10cf && device_desc.product_id() == 0x8062 {
+                println!("Found DMX!");
+            }
         }
     }
 }
