@@ -1,14 +1,15 @@
 extern crate libusb;
 
 pub struct Dmx {
-    context: libusb::Context
+    context: libusb::Context,
+    handle: Option<libusb::DeviceHandle>
 }
 
 impl Dmx {
     pub fn new() -> Dmx {
         let usb = libusb::Context::new().unwrap();
 
-        Dmx { context: usb }
+        Dmx { context: usb, handle: None }
     }
 
     pub fn connect(&mut self) {
@@ -16,7 +17,10 @@ impl Dmx {
             let device_desc = device.device_descriptor().unwrap();
 
             if device_desc.vendor_id() == 0x10cf && device_desc.product_id() == 0x8062 {
-                println!("Found DMX!");
+                match device.open() {
+                    Ok(handle) => self.handle = Some(handle),
+                    Err(_) => continue
+                }
             }
         }
     }

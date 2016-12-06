@@ -22,7 +22,7 @@ fn main() {
     
     let grid = Box::new(Orientation::Horizontal, 1);
 
-    for _ in 0..6 {
+    for _ in 0..10 {
         let scale = Scale::new_with_range(Orientation::Vertical, 0.0, 255.0, 1.0);
         grid.add(&scale);
 
